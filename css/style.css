@@ -109,3 +109,7 @@ body {
   overflow-y: scroll;
   grid-column: 2;
 }
+
+.animais-lista::-webkit-scrollbar {
+  width: 18px;
+}
