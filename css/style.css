@@ -104,3 +104,8 @@ body {
   margin-bottom: 1rem;
 }
 
+.animais-lista {
+  height: 370px;
+  overflow-y: scroll;
+  grid-column: 2;
+}
