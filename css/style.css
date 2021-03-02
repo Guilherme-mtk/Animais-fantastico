@@ -113,3 +113,9 @@ body {
 .animais-lista::-webkit-scrollbar {
   width: 18px;
 }
+
+.animais-lista::-webkit-scrollbar-thumb {
+  background: #FB5;
+  border-left: 4px solid #faf6ed;
+  border-right: 4px solid #faf6ed;
+}
