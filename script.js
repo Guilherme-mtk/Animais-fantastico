@@ -1,23 +1,61 @@
-// Retorne no console todas as imagens do site
-const Img = document.querySelectorAll('img')
-console.log(Img);
+//const imgs = document.querySelectorAll('img');
 
-//Retorne no console apenas  as palavras que começaram com a palavra imagem
-const imagensAnimais = document.querySelectorAll('img[src^="img/imagem"]');
-console.log(imagensAnimais);
+//imgs.forEach(function(item, index, array){
+//console.log(item, index, array)
+//});
+
+//const titulos = document.getElementsByClassName('titulo');
+//const titulosArray = Array.from(titulos);
+
+//titulosArray.forEach(function(item){
+  //console.log(item);
+//});
 
 
-//Selecione todos os links internos  (onde o href começa com #)
-const linksInternos = document.querySelectorAll('[href^="#"]');
-console.log(linksInternos.href);
+/*const imgs = document.querySelectorAll('img');
 
-//Selecione o primeiro h2 dentro de .animais-descricao
-const animaisH2 = document.querySelector('.animais-descricao h2');
-console.log(animaisH2);
+imgs.forEach((item, index) => {
+console.log(item, index)
+});
 
-//Selecione o último p do site  
-const todosP = document.getElementsByTagName('p')
-console.log(todosP[todosP.length - 1]);
+
+let i = 0;
+imgs.forEach(function(){
+console.log(i++)
+});
+
+imgs.forEach(() => console.log (i++));*/
+
+//Exercicio
+
+// Mostre no console cada parágrado do site
+const paragrafos = document.querySelectorAll('p');
+console.log(paragrafos);
+
+paragrafos.forEach((item) => {
+  console.log(item);
+});
+
+// Mostre o texto dos parágrafos no console
+paragrafos.forEach((item) => {
+  console.log(item.innerText);
+});
+
+// Como corrigir os erros abaixo:
+const imgs = document.querySelectorAll('img');
+
+imgs.forEach((item, index) => {
+  console.log(item, index);
+});
+
+let i = 0;
+imgs.forEach(() => {
+  console.log(i++);
+});
+
+imgs.forEach(() => i++);
+
+console.log(i);
 
 
 
