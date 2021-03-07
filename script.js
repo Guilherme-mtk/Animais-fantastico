@@ -1,61 +1,28 @@
-//const imgs = document.querySelectorAll('img');
+// Adicione a classe ativo a todos os itens do menu
+const menuItens = document.querySelectorAll('.menu a');
 
-//imgs.forEach(function(item, index, array){
-//console.log(item, index, array)
-//});
+menuItens.forEach((item) => {
+item.classList.add('ativo');
+})
 
-//const titulos = document.getElementsByClassName('titulo');
-//const titulosArray = Array.from(titulos);
+// Remove a classe ativo de todos os itens  do menu e mantenha apenas  no primeiro
+menuItens.forEach((item) => {
+  item.classList.remove('ativo');
+  });
+  menuItens[0].classList.add('ativo');
 
-//titulosArray.forEach(function(item){
-  //console.log(item);
-//});
-
-
-/*const imgs = document.querySelectorAll('img');
-
-imgs.forEach((item, index) => {
-console.log(item, index)
-});
-
-
-let i = 0;
-imgs.forEach(function(){
-console.log(i++)
-});
-
-imgs.forEach(() => console.log (i++));*/
-
-//Exercicio
-
-// Mostre no console cada parágrado do site
-const paragrafos = document.querySelectorAll('p');
-console.log(paragrafos);
-
-paragrafos.forEach((item) => {
-  console.log(item);
-});
-
-// Mostre o texto dos parágrafos no console
-paragrafos.forEach((item) => {
-  console.log(item.innerText);
-});
-
-// Como corrigir os erros abaixo:
+// Verifique se as imagens possuem o atributo alt 
 const imgs = document.querySelectorAll('img');
 
-imgs.forEach((item, index) => {
-  console.log(item, index);
-});
+imgs.forEach((img) => {
+const possuiAtributo = img.hasAttribute('alt');
+console.log(possuiAtributo);
+})
 
-let i = 0;
-imgs.forEach(() => {
-  console.log(i++);
-});
+// modifique o href do link externo no menu
 
-imgs.forEach(() => i++);
+const link = document.querySelector('a[href^="http"]');
+link.setAttribute('href', 'https://www.youtube.com/');
 
-console.log(i);
-
-
+console.log(link);
 
