@@ -1,49 +1,44 @@
+// Quando o usuário clicar nos links internos do site,
+// adicione a classe ativo ao item clicado e remova dos
+// demais itens caso eles possuam a mesma. Previna
+// o comportamento padrão desses links
+const linksInternos = document.querySelectorAll('a[href^="#"]');
 
-// Verifique a distância da primeira imagem
-// em relaçã ao topo da pagina
-const primeiraImg = document.querySelector('img');
-
-const height = primeiraImg.offsetTop;
-console.log(height);
-
-
-// Retorne a soma da largura de todas as imagens
-function somaimg() {
- const todasImg = document.querySelectorAll('img');
- let soma = 0;
- todasImg.forEach((img) => {
-   soma += img.offsetWidth;
- });
- console.log(soma);
+function handleLink(event) {
+  event.preventDefault();
+  linksInternos.forEach((link) => {
+    link.classList.remove('ativo');
+  });
+  event.currentTarget.classList.add('ativo');
 }
- window.onload = function() {
-  somaimg();
- }
 
-// Verifique se os links da página possuem 
-//o minimo recomendado para telas utilazadas
-//com o dedo.(48px/48px de acordo com o google)
+linksInternos.forEach((link) => {
+  link.addEventListener('click', handleLink);
+})
 
-const links = document.querySelectorAll('a')
-links.forEach((link) => {
-  const linkHeight =  link.offsetWidth;
-  const linkWidth =  link.offsetHeight;
- if(linkWidth >= 48 && linkHeight >= 48) {
-   console.log(link,'possui acessibilidade')
- } else {
-   console.log(link,'Não possui boa acessibilidade')
- }
-});
+// Selecione todos os elementos do site começando a partir do body,
+// ao clique mostre exatamente quais elementos estão sendo clicados
+const Elementos = document.querySelectorAll('body *');
 
-console.log(links);
-
-
-// Se o browser for menor que 720px,
-//adicione a classe menu-mobile ao menu
-
-const Small = window.matchMedia('(max-width: 720px').matches;
-
-if(Small) {
-  const menu = document.querySelector('.menu');
-  menu.classList.add('menu-mobile')
+function handleElemento(event) {
+  event.currentTarget.remove();
 }
+
+// todosElementos.forEach((elemento) => {
+//   elemento.addEventListener('click', handleElemento);
+// })
+
+// Utilizando o código anterior, ao invés de mostrar no console,
+// remova o elemento que está sendo clicado, o método remove() remove um elemento
+
+
+// Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+
+function ClickT(event) {
+  console.log(event.key);
+  if(event.key === 't') {
+    document.documentElement.classList.toggle('textomaior');
+  }
+}
+
+window.addEventListener('keydown', ClickT);
