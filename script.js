@@ -1,44 +1,40 @@
-// Quando o usuário clicar nos links internos do site,
-// adicione a classe ativo ao item clicado e remova dos
-// demais itens caso eles possuam a mesma. Previna
-// o comportamento padrão desses links
-const linksInternos = document.querySelectorAll('a[href^="#"]');
+// const h1 = document.querySelector('h1');
+// const animaisLista = document.querySelector('.animais-descricao');
+// console.log(h1.innerHTML)
+// console.log(h1.outerHTML)
 
-function handleLink(event) {
-  event.preventDefault();
-  linksInternos.forEach((link) => {
-    link.classList.remove('ativo');
-  });
-  event.currentTarget.classList.add('ativo');
-}
+// // h1.outerHTML = '<p>Novo Título</p>';
+// // console.log(animaisLista.innerHTML);
 
-linksInternos.forEach((link) => {
-  link.addEventListener('click', handleLink);
-})
+// const lista = document.querySelector('.animais-lista');
 
-// Selecione todos os elementos do site começando a partir do body,
-// ao clique mostre exatamente quais elementos estão sendo clicados
-const Elementos = document.querySelectorAll('body *');
+// console.log(lista.children[--lista.children.length]);
+// console.log(lista.querySelector('li:last-child'));
 
-function handleElemento(event) {
-  event.currentTarget.remove();
-}
+// console.log(lista.previousSibling);
 
-// todosElementos.forEach((elemento) => {
-//   elemento.addEventListener('click', handleElemento);
-// })
+// const animais = document.querySelector('.animais');
+// const contato = document.querySelector('.contato');
+// const titulo = contato.querySelector('.titulo');
 
-// Utilizando o código anterior, ao invés de mostrar no console,
-// remova o elemento que está sendo clicado, o método remove() remove um elemento
+// const mapa = document.querySelector('.mapa');
 
+// contato.replaceChild(lista, titulo);
 
-// Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+// // contato.insertBefore(animais, mapa);
 
-function ClickT(event) {
-  console.log(event.key);
-  if(event.key === 't') {
-    document.documentElement.classList.toggle('textomaior');
-  }
-}
+// const novoh1 = document.createElement('h1');
+// novoh1.innerText = 'Novo Título';
+// novoh1.classList.add('titulo');
 
-window.addEventListener('keydown', ClickT);
+// mapa.appendChild(novoh1);
+
+// console.log(novoh1);
+
+const h1 = document.querySelector('h1');
+const faq = document.querySelector('.faq');
+
+const cloneH1 = h1.cloneNode(true);
+
+cloneH1.classList.add('azul');
+faq.appendChild(cloneH1);
