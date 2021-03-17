@@ -1,3 +1,4 @@
+function inniTabnav () {
 const tabMenu = document.querySelectorAll('.js-tabmenu li');
 const tabContent = document.querySelectorAll('.js-tabcontent section');
 
@@ -16,4 +17,16 @@ if(tabMenu.length && tabContent.length) {
       activeTab(index);
     });
   });
+ }
 }
+inniTabnav ();
+
+const accordionList = document.querySelectorAll('.js-accordion dt');
+
+function activeAccordion() {
+  this.nextElementSibling.classList.add('ativo');
+}
+
+accordionList.forEach((item) => {
+  item.addEventListener('click', activeAccordion);
+})
