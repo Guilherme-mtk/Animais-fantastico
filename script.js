@@ -40,3 +40,14 @@ function initAccordion() {
   }
 }
 initAccordion();
+
+const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+
+function scrollToSection(event) {
+  event.preventDefault();
+  const href = event.currentTarget;
+}
+
+linksInternos.forEach(() => {
+link.addEventListener('click', scrollToSection);
+});
